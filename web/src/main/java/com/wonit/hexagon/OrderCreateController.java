@@ -1,5 +1,6 @@
 package com.wonit.hexagon;
 
+import com.wonit.hexagon.command.CreateOrderCommand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,10 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class OrderCreateController {
 
-    private final OrderSaver saver;
+    private final OrderCreator creator;
 
     @GetMapping("/orders")
-    public ResponseEntity<SavedOrderValue> createOrder() {
-        return ResponseEntity.ok(saver.save());
+    public ResponseEntity<String> createOrder() {
+        creator.create(CreateOrderCommand.of("hello world"));
+        return ResponseEntity.ok("success");
     }
 }

@@ -1,9 +1,8 @@
-package com.wonit.hexagon;
+package com.wonit.hexagon.command;
 
 import lombok.Value;
 
 @Value(staticConstructor = "of")
-public class SavedOrderValue {
-    Long id;
+public class CreateOrderCommand {
     String address;
 }
