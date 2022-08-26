@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "orders")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
