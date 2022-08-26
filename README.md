@@ -4,7 +4,7 @@ port and adapter 패턴이라고 불리는 hexagonal architecture 에 대해서 
 
 # gradle module
 
-- v1-module : 기본적인 hexagonal architecture 을 구현합니다.
+- [v1-module](https://github.com/my-research/hexagonal-architecture/tree/master/v1) : 기본적인 hexagonal architecture 을 구현합니다.
 - v2-module : port & adapter 와 server application 을 분리합니다.
 
 ### references
