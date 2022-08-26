@@ -1,7 +1,8 @@
 rootProject.name = 'hexagon'
 
-include 'domain'
-include 'application'
-include 'commons'
-include 'adapter:web-api'
-include 'adapter:persistence'
+include 'v1:domain'
+include 'v1:application'
+include 'v1:commons'
+include 'v1:adapter:web-api'
+include 'v1:adapter:persistence'
+
