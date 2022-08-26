@@ -1,5 +1,6 @@
 package com.wonit.hexagon.service;
 
+import com.wonit.hexagon.core.Order;
 import com.wonit.hexagon.port.CommandOrderPort;
 import com.wonit.hexagon.command.CreateOrderCommand;
 import com.wonit.hexagon.usecase.CreateOrderUseCase;
@@ -14,6 +15,6 @@ public class CreateOrderService implements CreateOrderUseCase {
 
     @Override
     public void create(CreateOrderCommand command) {
-        commandPort.create(command);
+        Order order = commandPort.create(command);
     }
 }
