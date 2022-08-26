@@ -1,31 +1,31 @@
 package com.wonit.hexagon.core;
 
-import lombok.AccessLevel;
+import com.wonit.hexagon.util.TimeBasedIdGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
+@AllArgsConstructor
 public class Order {
 
-    public static Order of(Long id, String address) {
-        return new Order(id, address);
+    public static Order newInstance(String address) {
+        Long id = TimeBasedIdGenerator.gen();
+        return new Order(id, address, OrderStatus.WAITING);
     }
 
-    public static Order of(String address) {
-        return new Order(address);
+    public static Order of(Long id, String address, OrderStatus status) {
+        return new Order(id, address, status);
     }
 
     private Long id;
     private String address;
+    private OrderStatus status;
 
-    private Order(Long id, String address) {
-        this.id = id;
-        this.address = address;
+    public void confirm() {
+        status = OrderStatus.CONFIRMED;
     }
 
-    private Order(String address) {
-        this.address = address;
+    public void cancel() {
+        status = OrderStatus.CANCELED;
     }
 }
