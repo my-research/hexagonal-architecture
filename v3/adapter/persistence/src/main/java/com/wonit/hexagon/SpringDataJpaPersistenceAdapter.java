@@ -12,11 +12,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class SpringDataJpaPersistenceAdapter implements CommandOrderPort {
 
-    /**
-     * 사실상 SpringDataJpaPersistenceAdapter 가 OrderRepository 의 구현체야
-     * CommandOrderPort 가 domain 에 있는 Repository 인거고
-     */
-
     private final SpringDataJpaOrderRepository repository;
 
     @Override
